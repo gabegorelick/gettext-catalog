@@ -148,6 +148,7 @@ Catalog.prototype.poToMessages = function poToMessages (po, options) {
       msgid: item.msgid,
       msgctxt: item.msgctxt,
       msgid_plural: item.msgid_plural,
+      msgstr: item.msgstr,
       references: item.references.map(function (r) {
         var parts = r.split(':');
         return {
@@ -186,6 +187,22 @@ Catalog.prototype.toPOs = function toPOs () {
       item.msgid = message.msgid;
       item.msgctxt = message.msgctxt;
       item.msgid_plural = message.msgid_plural;
+
+      item.msgstr = message.msgstr;
+      if (!item.msgstr) {
+        item.msgstr = [''];
+      } else if (!Array.isArray(item.msgstr)) {
+        item.msgstr = [item.msgstr || ''];
+      }
+
+      if (item.msgid_plural) {
+        if (item.msgstr.length === 1) {
+          item.msgstr.push('');
+        } else if (item.msgstr.length === 0) {
+          item.msgstr = ['', ''];
+        }
+      }
+
       item.extractedComments = (message.extractedComments || []).map(function (c) {
         return c; // this will change once #8 is implemented
       });
