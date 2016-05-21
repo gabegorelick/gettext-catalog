@@ -25,12 +25,12 @@
   "main": "./index.js",
   "dependencies": {
     "binary-search": "^1.2.0",
-    "pofile": "^0.2.12"
+    "pofile": "^1.0.2"
   },
   "devDependencies": {
     "eslint": "^2.10.2",
     "mocha": "^2.2.1",
-    "should": "^5.2.0"
+    "should": "^8.4.0"
   },
   "scripts": {
     "test": "eslint *.js test/*.js && mocha"
