@@ -100,7 +100,7 @@ Catalog.prototype.addMessages = function addMessages (messages) {
 
       var references = message.references || [];
       references.forEach(function (reference) {
-        var i = search(existingMessage.references, reference, function(a, b) {
+        var i = search(existingMessage.references, reference, function (a, b) {
           var filename = a.filename || '';
           return filename.localeCompare(b.filename || '') ||
             (a.firstLine || 0) - (b.firstLine || 0) ||

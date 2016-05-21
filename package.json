@@ -28,12 +28,11 @@
     "pofile": "^0.2.12"
   },
   "devDependencies": {
-    "jscs": "^1.12.0",
-    "jshint": "^2.6.3",
+    "eslint": "^2.10.2",
     "mocha": "^2.2.1",
     "should": "^5.2.0"
   },
   "scripts": {
-    "test": "jscs *.js test/*.js && jshint *.js test/*.js && mocha"
+    "test": "eslint *.js test/*.js && mocha"
   }
 }
